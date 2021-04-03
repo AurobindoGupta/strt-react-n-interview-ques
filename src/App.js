@@ -8,17 +8,15 @@ var welcomeText = "WELCOME....";
 
 var username = "madhav";
 
-
 export default function App() {
   var [counter, setCounter] = useState(0);
   var [buttonText, setButtonText] = useState("ON");
-  var [userInput, setUserInput]= useState("");
+  var [userInput, setUserInput] = useState("");
 
- function inputChangeHandler(event){
-  console.log(event.target.value);
-  setUserInput(event.target.value);
-
- }
+  function inputChangeHandler(event) {
+    console.log(event.target.value);
+    setUserInput(event.target.value);
+  }
   function changeButton() {
     if (buttonText === "ON") {
       var newButtonText = "OFF";
@@ -42,12 +40,11 @@ export default function App() {
         {welcomeText} <span style={{ color: "blue" }}>{username}</span>
       </h2>
       <div>
-      <button onClick={changeButton}>{buttonText} </button> {counter}
+        <button onClick={changeButton}>{buttonText} </button> {counter}
       </div>
       <br></br>
-      <input onChange= {inputChangeHandler}></input>
-        <div>WELCOME {userInput }</div>
-
-            </div>
+      <input onChange={inputChangeHandler}></input>
+      <div style={{ color: "green" }}>WELCOME {userInput}</div>
+    </div>
   );
 }
